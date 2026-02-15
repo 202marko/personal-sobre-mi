@@ -16,13 +16,11 @@
 <body>
 
     <!-- ===================================================== -->
-    <!-- CONTENEDOR PRINCIPAL DE LA APLICACIÓN -->
+    <!-- CONTENEDOR PRINCIPAL -->
     <!-- ===================================================== -->
     <div class="app-container">
 
-        <!-- ===================================================== -->
-        <!-- HEADER / IDENTIDAD DEL SISTEMA -->
-        <!-- ===================================================== -->
+        <!-- HEADER -->
         <header class="app-header">
             <h1>CORP-SECURE CR</h1>
             <p>Secure Corporate Messaging</p>
@@ -31,15 +29,13 @@
 
         <!-- ===================================================== -->
         <!-- SECCIÓN LOGIN -->
-        <!-- Esta sección será visible cuando el usuario NO esté autenticado -->
         <!-- ===================================================== -->
-        <section class="login-section">
+        <section class="login-section" id="loginSection">
 
             <h2>Acceso Seguro</h2>
 
-            <!-- BOTÓN LOGIN GOOGLE -->
-            <!-- Aquí luego conectaremos Firebase -->
-            <button class="primary-btn">
+            <!-- 🔑 BOTÓN LOGIN -->
+            <button id="loginBtn" class="primary-btn">
                 Iniciar sesión con Google
             </button>
 
@@ -47,12 +43,11 @@
 
 
         <!-- ===================================================== -->
-        <!-- SECCIÓN PRINCIPAL DE LA APP -->
-        <!-- Visible cuando el usuario esté autenticado -->
+        <!-- DASHBOARD (OCULTO HASTA LOGIN) -->
         <!-- ===================================================== -->
-        <section class="dashboard-section">
+        <section class="dashboard-section" id="dashboardSection" style="display: none;">
 
-            <!-- BLOQUE DE CLAVES -->
+            <!-- CLAVES -->
             <div class="keys-container">
 
                 <div class="key-box">
@@ -68,11 +63,12 @@
             </div>
 
 
-            <!-- BLOQUE DE MENSAJE -->
+            <!-- MENSAJE -->
             <div class="message-container">
 
                 <label for="messageInput">Mensaje</label>
-                <textarea id="messageInput" rows="3" placeholder="Escriba el mensaje cifrado..."></textarea>
+                <textarea id="messageInput" rows="3"
+                    placeholder="Escriba el mensaje cifrado..."></textarea>
 
                 <div class="message-buttons">
                     <button class="primary-btn">Enviar</button>
@@ -82,15 +78,15 @@
             </div>
 
 
-            <!-- BLOQUE DE MENSAJES MOSTRADOS -->
+            <!-- CHAT -->
             <div class="chat-box">
                 <p>Esperando mensajes...</p>
             </div>
 
 
-            <!-- BOTÓN CERRAR SESIÓN -->
+            <!-- 🚪 BOTÓN LOGOUT -->
             <div class="logout-container">
-                <button class="secondary-btn">
+                <button id="logoutBtn" class="secondary-btn">
                     Cerrar sesión
                 </button>
             </div>
@@ -98,8 +94,9 @@
         </section>
 
     </div>
-    <script type="module" src="./scripts/auth.js"></script>
 
+    <!-- SCRIPT FIREBASE -->
+    <script type="module" src="scripts/auth.js"></script>
 
 </body>
 
