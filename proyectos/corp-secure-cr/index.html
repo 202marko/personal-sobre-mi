@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- ============================= -->
+    <!-- CONFIGURACIÓN BÁSICA -->
+    <!-- ============================= -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corp-Secure CR</title>
+
+    <!-- ENLACE AL ARCHIVO CSS EXTERNO -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ===================================================== -->
+    <!-- CONTENEDOR PRINCIPAL DE LA APLICACIÓN -->
+    <!-- ===================================================== -->
+    <div class="app-container">
+
+        <!-- ===================================================== -->
+        <!-- HEADER / IDENTIDAD DEL SISTEMA -->
+        <!-- ===================================================== -->
+        <header class="app-header">
+            <h1>CORP-SECURE CR</h1>
+            <p>Secure Corporate Messaging</p>
+        </header>
+
+
+        <!-- ===================================================== -->
+        <!-- SECCIÓN LOGIN -->
+        <!-- Esta sección será visible cuando el usuario NO esté autenticado -->
+        <!-- ===================================================== -->
+        <section class="login-section">
+
+            <h2>Acceso Seguro</h2>
+
+            <!-- BOTÓN LOGIN GOOGLE -->
+            <!-- Aquí luego conectaremos Firebase -->
+            <button class="primary-btn">
+                Iniciar sesión con Google
+            </button>
+
+        </section>
+
+
+        <!-- ===================================================== -->
+        <!-- SECCIÓN PRINCIPAL DE LA APP -->
+        <!-- Visible cuando el usuario esté autenticado -->
+        <!-- ===================================================== -->
+        <section class="dashboard-section">
+
+            <!-- BLOQUE DE CLAVES -->
+            <div class="keys-container">
+
+                <div class="key-box">
+                    <label for="publicKey">Clave Pública</label>
+                    <textarea id="publicKey" rows="2" readonly></textarea>
+                </div>
+
+                <div class="key-box">
+                    <label for="privateKey">Clave Privada</label>
+                    <textarea id="privateKey" rows="2" readonly></textarea>
+                </div>
+
+            </div>
+
+
+            <!-- BLOQUE DE MENSAJE -->
+            <div class="message-container">
+
+                <label for="messageInput">Mensaje</label>
+                <textarea id="messageInput" rows="3" placeholder="Escriba el mensaje cifrado..."></textarea>
+
+                <div class="message-buttons">
+                    <button class="primary-btn">Enviar</button>
+                    <button class="secondary-btn">Recibir</button>
+                </div>
+
+            </div>
+
+
+            <!-- BLOQUE DE MENSAJES MOSTRADOS -->
+            <div class="chat-box">
+                <p>Esperando mensajes...</p>
+            </div>
+
+
+            <!-- BOTÓN CERRAR SESIÓN -->
+            <div class="logout-container">
+                <button class="secondary-btn">
+                    Cerrar sesión
+                </button>
+            </div>
+
+        </section>
+
+    </div>
+    <script type="module" src="./scripts/auth.js"></script>
+
+
+</body>
+
+</html>
