@@ -17,7 +17,7 @@ import {
 // 🔐 Configuración de Firebase
 // =============================
 const firebaseConfig = {
-  apiKey: "TU_API_KEY",
+  apiKey: "AIzaSyCRswJ9QJssofS7fs-G3WjlKo1xWP07mcE",
   authDomain: "cifrado-de-mensaje.firebaseapp.com",
   projectId: "cifrado-de-mensaje",
   storageBucket: "cifrado-de-mensaje.firebasestorage.app",
